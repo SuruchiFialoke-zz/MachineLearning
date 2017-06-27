@@ -136,7 +136,7 @@ def train_neural_network(x):
     optimizer = tf.train.AdamOptimizer().minimize(cost)
     
     # total number of epochs
-    hm_epochs = 4
+    hm_epochs = 10
     
     # Begin the session
     with tf.Session() as sess:
@@ -158,11 +158,17 @@ train_neural_network(x)
 
 ```
 
-    Epoch 0 completed out of 4 loss: 2144458.35571
-    Epoch 1 completed out of 4 loss: 422415.179379
-    Epoch 2 completed out of 4 loss: 226810.838915
-    Epoch 3 completed out of 4 loss: 130982.317286
-    Accuracy: 0.9342
+    Epoch 0 completed out of 10 loss: 1794357.3494
+    Epoch 1 completed out of 10 loss: 404222.131447
+    Epoch 2 completed out of 10 loss: 220933.089828
+    Epoch 3 completed out of 10 loss: 130508.189908
+    Epoch 4 completed out of 10 loss: 82744.7880272
+    Epoch 5 completed out of 10 loss: 51979.5030085
+    Epoch 6 completed out of 10 loss: 34854.3968684
+    Epoch 7 completed out of 10 loss: 27911.6349728
+    Epoch 8 completed out of 10 loss: 21536.7758809
+    Epoch 9 completed out of 10 loss: 18292.1778653
+    Accuracy: 0.9525
 
 
-Somewhere between 10 and 20 epochs should give us ~95% accuracy. 95% accuracy, sounds great, but is actually considered to be very bad compared to more popular methods. Consider that the only information we gave to our network was pixel values, that's it. We did not tell it about looking for patterns, or how to tell a 4 from a 9, or a 1 from a 8. The network simply figured it out with an inner model, based purely on pixel values to start, and achieved 95% accuracy in 4 epochs.
+Somewhere between 10 and 20 epochs should give us ~95% accuracy. 95% accuracy, sounds great, but is actually considered to be very bad compared to more popular methods. Consider that the only information we gave to our network was pixel values, that's it. We did not tell it about looking for patterns, or how to tell a 4 from a 9, or a 1 from a 8. The network simply figured it out with an inner model, based purely on pixel values to start, and achieved 95% accuracy in just 4 epochs. In next coming posts I will use this same dataset with more complex neural networks such as Convolution Neural Networks and Recurring Neural Networks.
